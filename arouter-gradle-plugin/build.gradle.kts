@@ -27,7 +27,7 @@ gradlePlugin {
     plugins {
         register("ARouterPlugin") {
             id = "io.github.JailedBird.ARouterPlugin"
-            implementationClass = "cn.jailedbird.arouter_gradle_plugin.ARouterPlugin"
+            implementationClass = "cn.jjjjjjava.arouter_gradle_plugin.ARouterPlugin"
             displayName = "Arouter AGP7.4+ plugin with Java 21 support"
             description = "Arouter AGP7.4+ plugin with Java 21 support (ASM 9.7)"
         }
