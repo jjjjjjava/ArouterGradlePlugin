@@ -43,9 +43,12 @@ dependencies {
     implementation(kotlin("stdlib"))
     gradleApi()
     compileOnly("com.android.tools.build:gradle:8.2.2")
-    compileOnly("commons-io:commons-io:2.8.0")
-    compileOnly("commons-codec:commons-codec:1.15")
+    // 必须用 implementation 打包进 JAR，否则运行时用 Gradle 自带的旧版 ASM
+    implementation("commons-io:commons-io:2.8.0")
+    implementation("commons-codec:commons-codec:1.15")
     // 升级 ASM 到 9.7 支持 Java 21 (class file version 65)
-    compileOnly("org.ow2.asm:asm-commons:9.7")
-    compileOnly("org.ow2.asm:asm-tree:9.7")
+    // 必须用 implementation 确保 ASM 9.7 打包进插件 JAR
+    implementation("org.ow2.asm:asm:9.7")
+    implementation("org.ow2.asm:asm-commons:9.7")
+    implementation("org.ow2.asm:asm-tree:9.7")
 }
