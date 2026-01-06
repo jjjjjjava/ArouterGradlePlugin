@@ -3,7 +3,7 @@
 plugins {
     id("java-gradle-plugin")
     id("org.jetbrains.kotlin.jvm") version "1.9.23"
-    id("com.gradle.plugin-publish") version "1.2.0"
+    id("maven-publish")  // 添加 maven-publish 插件
 }
 
 repositories {
@@ -16,14 +16,7 @@ repositories {
 group = "io.github.jjjjjjava"
 version = "1.0.3-java21"
 
-//pluginBundle {
-//    vcsUrl = "https://github.com/jjjjjjava/ArouterGradlePlugin"
-//    website = "https://github.com/jjjjjjava/ArouterGradlePlugin/blob/main/README_EN.md"
-//    tags = listOf("Arouter", "AGP7", "Arouter plugin", "AGP8", "Transform", "Auto Register")
-//}
-
 gradlePlugin {
-
     plugins {
         register("ARouterPlugin") {
             id = "io.github.jjjjjjava.ARouterPlugin"
@@ -34,26 +27,17 @@ gradlePlugin {
     }
 }
 
-/*gradlePlugin {
-    website.set("https://github.com/jjjjjjava/ArouterGradlePlugin")
-    vcsUrl.set("https://github.com/jjjjjjava/ArouterGradlePlugin/README_EN.md")
-    plugins {
-        create("greetingsPlugin") {
-            id = "io.github.johndoe.greeting"
-            implementationClass = "io.github.johndoe.gradle.GreetingPlugin"
-            displayName = "Gradle Greeting plugin"
-            description = "Gradle plugin to say hello!"
-            tags.set(listOf("search", "tags", "for", "your", "hello", "plugin"))
-        }
-        create("goodbyePlugin") {
-            id = "io.github.johndoe.goodbye"
-            implementationClass = "io.github.johndoe.gradle.GoodbyePlugin"
-            displayName = "Gradle Goodbye plugin"
-            description = "Gradle plugin to say goodbye!"
-            tags.set(listOf("search", "tags", "for", "your", "goodbye", "plugin"))
+// 配置 maven-publish 发布
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["java"])
+            groupId = "io.github.jjjjjjava"
+            artifactId = "arouter-gradle-plugin"
+            version = "1.0.3-java21"
         }
     }
-}*/
+}
 
 dependencies {
     implementation(kotlin("stdlib"))
