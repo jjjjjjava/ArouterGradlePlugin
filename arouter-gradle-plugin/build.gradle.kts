@@ -13,12 +13,12 @@ repositories {
 }
 
 // The project version will be used as your plugin version when publishing.
-group = "io.github.JailedBird"
+group = "io.github.jjjjjjava"
 version = "1.0.3-java21"
 
 //pluginBundle {
-//    vcsUrl = "https://github.com/JailedBird/ArouterGradlePlugin"
-//    website = "https://github.com/JailedBird/ArouterGradlePlugin/blob/main/README_EN.md"
+//    vcsUrl = "https://github.com/jjjjjjava/ArouterGradlePlugin"
+//    website = "https://github.com/jjjjjjava/ArouterGradlePlugin/blob/main/README_EN.md"
 //    tags = listOf("Arouter", "AGP7", "Arouter plugin", "AGP8", "Transform", "Auto Register")
 //}
 
@@ -26,7 +26,7 @@ gradlePlugin {
 
     plugins {
         register("ARouterPlugin") {
-            id = "io.github.JailedBird.ARouterPlugin"
+            id = "io.github.jjjjjjava.ARouterPlugin"
             implementationClass = "cn.jjjjjjava.arouter_gradle_plugin.ARouterPlugin"
             displayName = "Arouter AGP7.4+ plugin with Java 21 support"
             description = "Arouter AGP7.4+ plugin with Java 21 support (ASM 9.7)"
@@ -35,8 +35,8 @@ gradlePlugin {
 }
 
 /*gradlePlugin {
-    website.set("https://github.com/JailedBird/ArouterGradlePlugin")
-    vcsUrl.set("https://github.com/JailedBird/ArouterGradlePlugin/README_EN.md")
+    website.set("https://github.com/jjjjjjava/ArouterGradlePlugin")
+    vcsUrl.set("https://github.com/jjjjjjava/ArouterGradlePlugin/README_EN.md")
     plugins {
         create("greetingsPlugin") {
             id = "io.github.johndoe.greeting"

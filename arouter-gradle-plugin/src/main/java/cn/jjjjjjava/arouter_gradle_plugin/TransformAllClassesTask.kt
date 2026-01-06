@@ -35,7 +35,7 @@ abstract class TransformAllClassesTask : DefaultTask() {
 
     @TaskAction
     fun taskAction() {
-        println("Welcome to use ArouterGradlePlugin for AGP8: https://github.com/JailedBird/ArouterGradlePlugin")
+        println("Welcome to use ArouterGradlePlugin for AGP8: https://github.com/jjjjjjava/ArouterGradlePlugin")
         println("ArouterGradlePlugin task start:")
         val leftSlash = File.separator == "/"
         val targetList: List<ScanSetting> = listOf(
