@@ -4,7 +4,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
-    id("io.github.JailedBird.ARouterPlugin")
+    id("io.github.jjjjjjava.ARouterPlugin")
 }
 
 ksp {
@@ -20,13 +20,13 @@ android.sourceSets.all {
 }
 
 android {
-    namespace = "cn.jailedbird.arouter.ksp"
+    namespace = "cn.jjjjjjava.arouter.ksp"
     compileSdk = 33
     buildFeatures {
         buildConfig = true
     }
     defaultConfig {
-        applicationId = "cn.jailedbird.arouter.ksp"
+        applicationId = "cn.jjjjjjava.arouter.ksp"
         minSdk = 21
         targetSdk = 33
         versionCode = 1
