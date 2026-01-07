@@ -22,11 +22,17 @@ class ARouterPlugin : Plugin<Project> {
                 project.extensions.getByType(AndroidComponentsExtension::class.java)
 
             androidComponents.onVariants { variant ->
-                val disableDebugTransform =
-                    project.extensions.getByType(ARouterConfig::class.java).disableTransformWhenDebugBuild
-
-                if (disableDebugTransform && variant.name.contains("debug")) {
-                    println("Skip ARouter Transform When Debug Build!")
+                val config = project.extensions.getByType(ARouterConfig::class.java)
+                
+                // 完全禁用 Transform
+                if (config.disableTransform) {
+                    println("Skip ARouter Transform! (disableTransform=true) variant=${variant.name}")
+                    return@onVariants
+                }
+                
+                // 仅 Debug 构建时禁用
+                if (config.disableTransformWhenDebugBuild && variant.name.contains("debug", ignoreCase = true)) {
+                    println("Skip ARouter Transform When Debug Build! variant=${variant.name}")
                     return@onVariants
                 }
 
